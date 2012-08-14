@@ -40,10 +40,14 @@ Sends information about the devices capabilities and services. See the chapter "
 * ... more services, up to 16 total ...
 
 
+
+
 ### serviceUnknown (0x10, in)
 The service requested is unknown to the device. Probably the service index was wrong.
 #### Body Structure
 * service (1 byte): the service-index that was requested, but does not exist
+
+
 
 
 ### serviceCall (0x20, in)
@@ -52,6 +56,8 @@ A service-dependent call. The call will not produce a result-message (in contras
 * service (1 byte): index of the service in the announceServices message
 * request type (2 bytes): type of the request (service dependent).
 * payload (up to 96 bytes): dependent on the service request type
+
+
 
 
 ### serviceRequest (0x30, in)
@@ -75,6 +81,8 @@ The request type is unknown to or unsupported by the device/service.
 #### Body Structure
 * service (1 byte): index of the service in the announceService message
 * request type (2 bytes): request type that is unknown or unsupported (see serviceRequest)
+
+
 
 
 ### serviceSubscribe (0x40, in)
